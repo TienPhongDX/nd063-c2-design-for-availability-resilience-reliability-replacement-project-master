@@ -4,8 +4,8 @@
 2. Minimum RTO for a single region outage : 15-30 mins
     - In the event of a complete region outage, one of the support staff needs to manually promote the read replica in the secondary region to the primary database, update the application DB url with the new one. If this happens at night, we should safely assume that it takes at-least 5-10 mins for someone to getup and login to AWS console, 10-20 mins to actually fix the issue.
 
-3. Minimum RPO for single AZ outage : 0 mins
+3. Minimum RPO for single AZ outage : 5 mins
     - With the Multi-AZ configuration, we have a synchronous standby copy of the primary database, so there would be no loss of data.
 
-4. Minimum RPO for single region outage : 0 mins
+4. Minimum RPO for single region outage : 1-2 mins
     - Since we have a complete read replica in another region, there would be no data loss
